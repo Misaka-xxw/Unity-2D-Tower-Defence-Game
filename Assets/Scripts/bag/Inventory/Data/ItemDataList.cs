@@ -7,12 +7,12 @@ public class ItemDataList : ScriptableObject
     public List<ItemDetails> itemDetailsList;
     public ItemDetails GetItemDetails(ItemName itemName)
     {
-        return itemDetailsList.Find(i => i.ItemName == itemName);
+        return itemDetailsList.Find(i => i.itemName == itemName);
     }
 }
 [System.Serializable]
 public class ItemDetails
 {
-    public ItemName ItemName;
+    public ItemName itemName;
     public Sprite itemSprite;
 }

@@ -10,7 +10,7 @@
   <ShowMissingRigidBodyWarning>true</ShowMissingRigidBodyWarning>
   <ShowSpatialAudioWarningMsg>true</ShowSpatialAudioWarningMsg>
   <WwiseInstallationPathWindows>F:\wwise\Wwise2022.1.15.8501</WwiseInstallationPathWindows>
-  <WwiseProjectPath>Wwise/TowerDefenceGame/TowerDefenceGame.wproj</WwiseProjectPath>
+  <WwiseProjectPath>Wwise/spotlight/spotlight.wproj</WwiseProjectPath>
   <UseWaapi>true</UseWaapi>
   <WaapiPort>8080</WaapiPort>
   <WaapiIP>127.0.0.1</WaapiIP>

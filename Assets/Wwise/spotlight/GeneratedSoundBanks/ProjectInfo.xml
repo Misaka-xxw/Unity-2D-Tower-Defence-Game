@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo>
+	<Project Name="spotlight" GUID="{FC77C841-A452-4565-9175-1599E3DF2E35}" Generator="2022.1.15.8501"/>
+	<CacheRoot>../.cache</CacheRoot>
+	<Platforms>
+		<Platform Name="Windows" GUID="{94B70D10-967B-4DB9-8E5E-670AAE14331F}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="Windows"/>
+	</Platforms>
+	<Languages>
+		<Language Name="English(US)" Id="684519430" GUID="{086D4649-37B0-469B-A6F4-06E7C289B9C7}" Default="true" UseAsStandIn="true"/>
+	</Languages>
+	<FileHash>{6830143D-80C2-F7D0-AE4D-34C0E6D1A5A1}</FileHash>
+</ProjectInfo>
