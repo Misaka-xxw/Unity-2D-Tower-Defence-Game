@@ -32,7 +32,7 @@ public class EnemyBehavior : MonoBehaviour
         if(movementInput.magnitude>0.1f&&currentSpeed>=0)
         {
             rb.velocity=movementInput*currentSpeed;
-            if(movementInput.x<0)
+            if(movementInput.x < 0)
             {
                 sr.flipX = false;
             }

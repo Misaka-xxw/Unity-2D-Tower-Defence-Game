@@ -1,0 +1,69 @@
+
+npc.png
+size: 1836,808
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm-back
+  rotate: true
+  xy: 1087, 648
+  size: 158, 679
+  orig: 158, 679
+  offset: 0, 0
+  index: -1
+arm-front
+  rotate: false
+  xy: 624, 76
+  size: 150, 730
+  orig: 150, 730
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 331, 62
+  size: 291, 744
+  orig: 291, 813
+  offset: 0, 69
+  index: -1
+body-lower
+  rotate: true
+  xy: 1712, 125
+  size: 201, 112
+  orig: 201, 112
+  offset: 0, 0
+  index: -1
+eye2
+  rotate: false
+  xy: 624, 4
+  size: 285, 70
+  orig: 286, 70
+  offset: 0, 0
+  index: -1
+eyelight
+  rotate: true
+  xy: 1712, 328
+  size: 318, 122
+  orig: 324, 128
+  offset: 3, 3
+  index: -1
+head
+  rotate: true
+  xy: 1087, 2
+  size: 644, 623
+  orig: 644, 623
+  offset: 0, 0
+  index: -1
+leg-back
+  rotate: false
+  xy: 2, 57
+  size: 327, 749
+  orig: 327, 749
+  offset: 0, 0
+  index: -1
+leg-front
+  rotate: false
+  xy: 776, 93
+  size: 309, 713
+  orig: 309, 713
+  offset: 0, 0
+  index: -1
