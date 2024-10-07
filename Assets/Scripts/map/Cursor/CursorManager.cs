@@ -12,7 +12,8 @@ public class CursorManager : MonoBehaviour
     private bool holdItem;
     private Collider2D ObjectAtMousePosition()
     {
-        return Physics2D.OverlapPoint(mouseWorldPos);
+        //return Physics2D.OverlapPoint(mouseWorldPos);
+        return Physics2D.OverlapPoint(characterTest.player.position);
     }
     private void OnEnable()
     {
@@ -48,12 +49,13 @@ public class CursorManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        canClick = ObjectAtMousePosition();
-        if (hand.gameObject.activeInHierarchy)
-        {
-            hand.position = Input.mousePosition;
-        }
-        if (canClick && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(key: KeyCode.F)))
+        //canClick = ObjectAtMousePosition();
+        //if (hand.gameObject.activeInHierarchy)
+        //{
+        //    hand.position = Input.mousePosition;
+        //}
+        //if (canClick && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(key: KeyCode.F)))
+        if (teleport.isEnter && Input.GetKeyDown(key: KeyCode.F))
         {
             ClickAction(ObjectAtMousePosition().gameObject);
         }

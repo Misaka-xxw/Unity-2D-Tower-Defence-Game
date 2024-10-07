@@ -24,6 +24,14 @@ public class DialogueController : MonoBehaviour
     {
         FillDialogueStack();
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag=="Player")
+        {
+            teleport.isEnter = true;
+            Debug.Log(teleport.isEnter);
+        }
+    }
     private void FillDialogueStack()
     {
         dialogueEmptyStack = new Stack<string>();
@@ -54,11 +62,13 @@ public class DialogueController : MonoBehaviour
     private IEnumerator DialogueRoutine(Stack<string> data)
     {
         isTalking = true;
+        Time.timeScale = 0;
         if(data.TryPop(out string result))
         {
             EventHandler.CallShowDialogueEvent(result);
             yield return null;
             isTalking = false;
+            Time.timeScale = 1f;
             EventHandler.CallGameStateChangeEvent(GameState.Pause);
         }
         else
@@ -66,6 +76,7 @@ public class DialogueController : MonoBehaviour
             EventHandler.CallShowDialogueEvent(string.Empty);
             FillDialogueStack();
             isTalking = false;
+            Time.timeScale = 1f;
             EventHandler.CallGameStateChangeEvent(GameState.GamePLay);
         }
     }

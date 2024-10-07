@@ -11,7 +11,7 @@ public class TransitionManager : Singleton<TransitionManager>,iSaveable
     public CanvasGroup fadeCanvasGroup;
     public float fadeDuration;
     private bool canTransition;
-    public static TransitionManager Instance { set; get; }
+    //public static TransitionManager Instance { set; get; }
     private void OnEnable()
     {
         EventHandler.GameStateChangeEvent += OnGameStateChangeEvent;
