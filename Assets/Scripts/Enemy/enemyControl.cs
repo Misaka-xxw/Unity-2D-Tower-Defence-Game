@@ -17,7 +17,7 @@ public class enemyControl : MonoBehaviour
     private int currentIndex = 0;
     private float pathGenerateInteval = 0.5f;
     private float pathGenerateTimer = 0f;
-    private bool faceleft = true;
+    public float highOfABox = 0.4f;
     private void Awake()
     {
         seeker = GetComponent<Seeker>();
@@ -34,7 +34,7 @@ public class enemyControl : MonoBehaviour
         if (player == null)
             return;
         float distance = Vector2.Distance(player.position, transform.position);
-        if (distance < chaseDistance && ((faceleft&&player.position.x<=transform.position.x)||(!faceleft&&player.position.x>=transform.position.x)))
+        if (distance < chaseDistance && player.position.z <= 2 * highOfABox)
         {
             AutoPath();
             if (pathPointList == null)
