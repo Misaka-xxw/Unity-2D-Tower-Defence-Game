@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
@@ -15,7 +16,7 @@ public class SpiritManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        CameraFollow.target = currentPlayer.transform;
     }
     private Collider2D ObjectAtMousePosition()
     {
@@ -32,10 +33,20 @@ public class SpiritManager : MonoBehaviour
             {
                 obj.color = Color.black;
             }
-            currentPlayer.GetComponent<characterTest>().enabled = false;
             viewCamera.gameObject.SetActive(true);
             MainCamera.gameObject.SetActive(false);
             Time.timeScale = 0.5f;
+            if (currentPlayer.tag == "Enemy")
+            {
+                currentPlayer.GetComponent<enemyControl>().enabled = true;
+                currentPlayer.GetComponent<Seeker>().enabled = true;
+                currentPlayer.GetComponent<EnemyBehavior>().enabled = true;
+                currentPlayer.GetComponent<catmove>().enabled = false;
+            }
+            if(currentPlayer.tag == "Player")
+            {
+                currentPlayer.GetComponent<PlayerParentMove>().enabled = false;
+            }
         }
         //if (Input.GetMouseButtonDown(0))
         //{
@@ -83,11 +94,21 @@ public class SpiritManager : MonoBehaviour
                 obj.color = Color.white;
             }
             currentPlayer = clickObject.gameObject;
+            CameraFollow.target=currentPlayer.transform;
             Animator anim = currentPlayer.GetComponent<Animator>();
             anim.SetTrigger("controlStart");
+            if(clickObject.tag=="Enemy")
+            {
+                currentPlayer.GetComponent<enemyControl>().enabled = false;
+                currentPlayer.GetComponent<Seeker>().enabled = false;
+                currentPlayer.GetComponent<EnemyBehavior>().enabled = false;
+            }
             if (Input.anyKeyDown || Input.GetMouseButtonDown(0))
             {
-                currentPlayer.GetComponent<characterTest>().enabled = true;
+                if(currentPlayer.tag=="Enemy")
+                    currentPlayer.GetComponent<catmove>().enabled = true;
+                if(currentPlayer.tag=="Player")
+                    currentPlayer.GetComponent<PlayerParentMove>().enabled = true;
                 anim.SetTrigger("controlCancel");
             }
             viewCamera.gameObject.SetActive(false);

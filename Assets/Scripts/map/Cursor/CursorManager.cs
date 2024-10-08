@@ -13,7 +13,7 @@ public class CursorManager : MonoBehaviour
     private Collider2D ObjectAtMousePosition()
     {
         //return Physics2D.OverlapPoint(mouseWorldPos);
-        return Physics2D.OverlapPoint(characterTest.player.position);
+        return Physics2D.OverlapPoint(catmove.player.position);
     }
     private void OnEnable()
     {
